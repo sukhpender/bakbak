@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "100384721039",
+    "project_id": "bakbak-e520c",
+    "storage_bucket": "bakbak-e520c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100384721039:android:77e697750cabdd0a0b48fa",
+        "android_client_info": {
+          "package_name": "com.example.messengerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "100384721039-68v7dighitqmnd22geldr5nksnjg758p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBiZAOWb3rc9ERAKVaMxzJZMUPh3aVz5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "100384721039-68v7dighitqmnd22geldr5nksnjg758p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
