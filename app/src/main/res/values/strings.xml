@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">MessengerApp</string>
+    <string name="app_name">BakBak</string>
+    <string name="username">username</string>
+    <string name="username1">Username</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Email</string>
+    <string name="passwrd">Password</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="welcome">Welcome</string>
+    <string name="logout">Logout</string>
+
+
 </resources>
