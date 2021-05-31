@@ -76,8 +76,12 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                     password
                 ).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
+                        Toast.makeText(
+                            this@RegisterActivity,
+                            "Registration Successful",
+                            Toast.LENGTH_SHORT
+                        ).show()
                         window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        progress_bar_register.visibility = View.GONE
                         firebaseUserId = mAuth.currentUser!!.uid
                         refUsers = FirebaseDatabase.getInstance().reference.child("Users")
                             .child(firebaseUserId)
@@ -87,19 +91,20 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                         userHashMap["username"] = username
                         userHashMap["profile"] =
                             "https://firebasestorage.googleapis.com/v0/b/bakbak-e520c.appspot.com/o/profile_place.png?alt=media&token=c8bc853d-3c6a-417f-a1eb-0a39295a8337"
-                        userHashMap["profile_cover"] =
-                            "https://firebasestorage.googleapis.com/v0/b/bakbak-e520c.appspot.com/o/profile_cover.jpg?alt=media&token=b4094fa8-0309-4087-bffc-61a05ca825ca"
+                        /*userHashMap["cover"] =
+                            "https://firebasestorage.googleapis.com/v0/b/bakbak-e520c.appspot.com/o/facebook-svgrepo-com.svg?alt=media&token=1dda1e90-4862-45f7-999d-fc460c92bcb5"*/
                         userHashMap["status"] = "offline"
                         userHashMap["search"] = username.toLowerCase()
                         userHashMap["facebook"] = "https://m.facebook.com"
                         userHashMap["instagram"] = "https://m.instagram.com"
                         userHashMap["website"] = "https://www.google.com"
 
-                        refUsers.updateChildren(userHashMap).addOnCompleteListener { task ->
+                        refUsers.updateChildren(userHashMap).addOnCompleteListener { t ->
                             if (task.isSuccessful) {
                                 val i = Intent(this@RegisterActivity, MainActivity::class.java)
                                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                                 startActivity(i)
+                                progress_bar_register.visibility = View.GONE
                                 finish()
                             }
                         }

@@ -10,6 +10,7 @@
     <string name="login">Login</string>
     <string name="welcome">Welcome</string>
     <string name="logout">Logout</string>
+    <string name="search">Search Users here..</string>
 
 
 </resources>

@@ -3,14 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.SearchFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edt_search_user"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Search fragments"
-        android:textSize="30dp"
-        android:layout_centerInParent="true"
+        android:layout_margin="7dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:hint="@string/search"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_searchList"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="8dp"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/edt_search_user"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
         />
 
 </RelativeLayout>

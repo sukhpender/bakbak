@@ -70,6 +70,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 progress_bar_login.visibility = View.VISIBLE
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
+                        Toast.makeText(this@LoginActivity, "Login Successful",Toast.LENGTH_SHORT).show()
                         window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
                         progress_bar_login.visibility = View.GONE
                         val i = Intent(this@LoginActivity, MainActivity::class.java)
@@ -78,7 +79,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                         finish()
                     } else {
                         window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE)
-                        progress_bar_register.visibility = View.GONE
+
+                        progress_bar_login.visibility = View.GONE
                         Toast.makeText(
                             this@LoginActivity,
                             "Error Message: " + task.exception?.message,
